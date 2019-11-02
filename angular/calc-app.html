@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="xapp">
+<head>
+	<title>belajar angular</title>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-controller="xctrl">
+	<h1>simple calc</h1>
+
+	<hr>
+
+	<h2>{{operation}}</h2>
+	<input type="text" ng-model="obj1">
+	<input type="text" ng-model="obj2">
+	<span> = {{result}}</span>
+	<br>
+	<button ng-click="operate(1)">Add</button>
+	<button ng-click="operate(2)">Subtraction</button>
+	<button ng-click="operate(3)">Multiply</button>
+	<button ng-click="operate(4)">Divide</button>
+
+</body>
+</html>
