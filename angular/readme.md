@@ -1,0 +1,1 @@
+Ini adalah project kolaborasi untuk belajar angular JS
