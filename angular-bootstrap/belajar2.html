@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="Appku">
+<head>
+	<title>Belajar Angular dengan Bootstrap</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<h1>Belajar Angular JS Controller</h1>
+
+<h4>Belajar Binding dengan Controller</h4>
+
+<div class="container" ng-controller="tampil">
+ <div class="row">
+
+  <div class="col-md">  	
+	<div class="alert alert-success" role="alert">
+	 {{data}}
+	</div>
+		<div class="form-group">
+		    <label for="data">Masukan Data</label>
+		    <input type="text" class="form-control" placeholder="" ng-model="data">
+		</div>
+	</div>
+
+  </div> 	
+ </div>
+
+<hr>
+
+<h3>Kalkulator</h3>
+
+<div class="container" ng-controller="kalkulator">
+	<div class="row">
+		<div class="col-md">
+			<div class="form-group">
+		    	<label for="data">Masukan Angka 1</label>
+		    	<input type="text" class="form-control" placeholder="0" ng-model="angka1">
+			</div>
+			<div class="form-group">
+		    	<label for="data">Masukan Angka 2</label>
+		    	<input type="text" class="form-control" placeholder="0" ng-model="angka2">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm" style="margin-top: 5px;">
+			<button class="btn btn-block btn-lg btn-primary" ng-click="operasi('tambah')">+</button>
+		</div>		
+		<div class="col-sm" style="margin-top: 5px;">
+			<button class="btn btn-block btn-lg btn-warning" ng-click="operasi('kurang')">-</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm" style="margin-top: 5px;">
+			<button class="btn btn-block btn-lg btn-success" ng-click="operasi('kali')">x</button>
+		</div>		
+		<div class="col-sm" style="margin-top: 5px;">
+			<button class="btn btn-block btn-lg btn-danger" ng-click="operasi('bagi')">:</button>
+		</div>
+	</div>
+
+	<div class="row" style="margin-top: 10px">
+		<div class="col-md">
+			<div class="form-group">
+		    	<label for="data">Hasil</label>
+		    	<input type="text" class="form-control" placeholder="0" readonly="readonly" value="{{hasil}}">
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- include angularJS -->
+<script type="text/javascript" src="js/angular.js"></script>
+<!-- JS custom sendiri -->
+<script type="text/javascript" src="js/app.js"></script>
+<script src="js/jquery-3.2.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
