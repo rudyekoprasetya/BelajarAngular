@@ -1,1 +1,1 @@
-Ini adalah project kolaborasi untuk belajar angular JS
+Ini adalah project kolaborasi untuk belajar angular JS dengan menggunkan css bootstrap

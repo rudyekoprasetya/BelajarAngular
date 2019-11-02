@@ -23,3 +23,4 @@ MyApp.controller('kalkulator',  function($scope){ //membuat controller kalkulato
 
 });
 
+
