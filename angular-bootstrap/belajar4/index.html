@@ -23,15 +23,15 @@
   	<table class="table table-striped">
   		<thead>
   			<tr>
-  				<td>ID</td>
-  				<td>Name</td>
-  				<td>Profile</td>
-  				<td>Email</td>
-  				<td>Gender</td>
+  				<td><a href="#" ng-click="ord='id'">#</a></td>
+  				<td><a href="#" ng-click="ord='first_name'">Name</a></td>
+  				<td><a href="#" ng-click="ord='profile'">Profile</td>
+  				<td><a href="#" ng-click="ord='email'">Email</td>
+  				<td><a href="#" ng-click="ord='gender'">Gender</td>
   			</tr>
   		</thead>
   		<tbody>
-  			<tr ng-repeat="row in isiData | filter:keyword">
+  			<tr ng-repeat="row in isiData | filter:keyword | orderBy:ord">
   				<td>{{row.id}}</td>
   				<td>{{row.first_name}}</td>
   				<td><img src="{{row.profile}}" width="60px" height="60px"></td>
