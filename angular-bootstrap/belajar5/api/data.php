@@ -22,10 +22,11 @@ if($request=='get') {
 
 	echo json_encode($response);
 } elseif ($request=='post') {
-	$id=$_POST['id'];
-	$nama=$_POST['nama'];
-	$alamat=$_POST['alamat'];
-	$gaji=$_POST['gaji'];
+	$form_data = json_decode(file_get_contents("php://input"));
+	$id=$form_data->id;
+	$nama=$form_data->nama;
+	$alamat=$form_data->alamat;
+	$gaji=$form_data->gaji;
 	$qry="INSERT INTO pengurus VALUES('$id','$nama','$alamat',$gaji)";
 	$query=mysqli_query($con,$qry);
 	$response=array(
@@ -34,7 +35,8 @@ if($request=='get') {
 	);
 	echo json_encode($response);
 } elseif ($request=='edit') {
-	$id=$_GET['id'];
+	$form_data = json_decode(file_get_contents("php://input"));
+	$id=$form_data->id;
 	$qry="SELECT * FROM pengurus WHERE id='$id'";
 	$query=mysqli_query($con,$qry);
 	$row=mysqli_fetch_assoc($query);
@@ -54,7 +56,8 @@ if($request=='get') {
 	
 	echo json_encode($response);
 } elseif ($request=='del') {
-	$id=$_POST['id'];
+	$form_data = json_decode(file_get_contents("php://input"));
+	$id=$form_data->id;
 	$qry="DELETE FROM pengurus WHERE id='$id'";	
 	$query=mysqli_query($con,$qry);
 	$response=array(
@@ -63,10 +66,11 @@ if($request=='get') {
 		);
 	echo json_encode($response);
 } elseif ($request=='put') {
-	$id=$_POST['id'];
-	$nama=$_POST['nama'];
-	$alamat=$_POST['alamat'];
-	$gaji=$_POST['gaji'];
+	$form_data = json_decode(file_get_contents("php://input"));
+	$id=$form_data->id;
+	$nama=$form_data->nama;
+	$alamat=$form_data->alamat;
+	$gaji=$form_data->gaji;
 	$qry="UPDATE pengurus SET nama='$nama', alamat='$alamat', gaji='$gaji' WHERE id='$id'";
 	$query=mysqli_query($con,$qry);
 	$response=array(

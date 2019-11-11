@@ -73,7 +73,7 @@
           <td>{{row.nama}}</td>
           <td>{{row.alamat}}</td>
           <td>{{row.gaji}}</td>
-          <td><button class="btn btn-small btn-warning" data-toggle="modal" data-target="#myModalEdit">edit</button> <button class="btn btn-small btn-danger">delete</button></td>
+          <td><button class="btn btn-small btn-warning" data-toggle="modal" data-target="#myModalEdit" ng-click="getID(row.id)">edit</button> <button class="btn btn-small btn-danger" ng-click="delData(row.id)">delete</button></td>
         </tr>
       </tbody>
       
@@ -112,25 +112,25 @@
       <div class="modal-body">
         <div class="form-group">
           <label>ID</label>
-          <input type="text" class="form-control">
+          <input type="text" ng-model="id" class="form-control">
         </div>
         <div class="form-group">
           <label>NAMA</label>
-          <input type="text" class="form-control">
+          <input type="text" ng-model="nama" class="form-control">
         </div>
         <div class="form-group">
           <label>ALAMAT</label>
-          <textarea class="form-control"></textarea>
+          <textarea class="form-control" ng-model="alamat"></textarea>
         </div>
         <div class="form-group">
           <label>GAJI</label>
-          <input type="number" class="form-control">
+          <input type="number" ng-model="gaji" class="form-control">
         </div>
       </div>
-
+ 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="InsertData()">Save</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
 
@@ -154,25 +154,25 @@
       <div class="modal-body">
         <div class="form-group">
           <label>ID</label>
-          <input type="text" class="form-control">
+          <input type="text" ng-model="idEdit" class="form-control" readonly="readonly">
         </div>
         <div class="form-group">
           <label>NAMA</label>
-          <input type="text" class="form-control">
+          <input type="text" ng-model="namaEdit" class="form-control">
         </div>
         <div class="form-group">
           <label>ALAMAT</label>
-          <textarea class="form-control"></textarea>
+          <textarea class="form-control" ng-model="alamatEdit"></textarea>
         </div>
         <div class="form-group">
           <label>GAJI</label>
-          <input type="number" class="form-control">
+          <input type="number" ng-model="gajiEdit" class="form-control">
         </div>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateData()">Update</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
 
